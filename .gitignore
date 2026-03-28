@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Firmware binaries (large, keep originals outside git)
+*.bin
+*.img
+diagnostics/mac_analysis/fw_extract/
+
+# Ghidra project (large, regenerable)
+analysis/ghidra_project/
+
+# Media captures (regenerable)
+diagnostics/mac_analysis/*.wav
+diagnostics/mac_analysis/*.mp4
+diagnostics/mac_analysis/*.jpg
+diagnostics/mac_analysis/*.hex
+
+# KakaoTalk photos
+KakaoTalk_Photo_*.jpeg
