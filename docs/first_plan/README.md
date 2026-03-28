@@ -199,7 +199,7 @@ ISP 하드웨어가 RGB 감마 LUT(256엔트리) 지원 확인됨 (GPCV2247F 사
 
 ```
 Phase 0 (해상도 진실)    ████████████  ✅ 완료 — 센서 1280x720 확정
-Phase 1 (Quick Wins)     ████████████  즉시 적용, 효과 큼
+Phase 1 (Quick Wins)     ████████████  ⚠️ UVC 패치 효과 없음 → 독립모드 ISP로 전환
 Phase 2 (JPEG 품질)      ████████      Q-테이블 찾기 + 교체
 Phase 3 (ISP 기본값)     ██████        설정 블록 역분석
 Phase 4 (고급 ISP)       ████          Ghidra 심층 분석
