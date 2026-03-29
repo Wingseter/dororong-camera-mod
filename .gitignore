@@ -20,5 +20,11 @@ diagnostics/mac_analysis/*.mp4
 diagnostics/mac_analysis/*.jpg
 diagnostics/mac_analysis/*.hex
 
+# All Images
+*.jpg
+*.png
+*.jpeg
+*.bmp
+
 # KakaoTalk photos
 KakaoTalk_Photo_*.jpeg
