@@ -1,7 +1,7 @@
 import sys
 try:
     from PIL import Image, ImageDraw, ImageFont
-    img = Image.open('KakaoTalk_Photo_2026-03-21-23-54-06.jpeg')
+    img = Image.open('input.jpeg')
     draw = ImageDraw.Draw(img)
     w, h = img.size
     rows, cols = 10, 10

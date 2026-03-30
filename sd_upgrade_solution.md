@@ -5,7 +5,7 @@
 ## 문제 원인 분석
 이전 테스트에서 나타난 `Program error please check file` 에러는 예상했던대로 **체크섬 불일치**입니다. 하지만 체크섬 검증 방식에 대해 흥미로운 사실이 있습니다: 업데이트 코드는 펌웨어 파일 내부의 헤더(GPNV)를 읽는 것이 아니라 **파일명(Filename)** 안에 적힌 텍스트에서 버전을 검증하고 체크섬을 기대값으로 추출합니다.
 
-[sd_upgrade_test.md](file:///Users/kwon/Workspace/Python/2026/dororong/docs/ongoing/sd_upgrade_test.md)에 파악하셨던 분석 결과를 다시 해석해보면 다음과 같습니다:
+[sd_upgrade_test.md](docs/ongoing/sd_upgrade_test.md)에 파악하셨던 분석 결과를 다시 해석해보면 다음과 같습니다:
 
 1. **파일 검색**: `C:\JH_5307*.bin` 와일드카드 검색 
 2. **`findfile` 결과 구조체 오프셋**: 119바이트 FAT Directory Entry (혹은 OS 내부 파일 구조체)
@@ -30,11 +30,11 @@
 - **[빌드 문자열 13자]**: 기존 번호인 `2025004291200` 와 다르게 설정하여 버전 우회를 통과합니다. (예: `2025004291201`)
 - **[체크섬 8자]**: 수정한 펌웨어 파일 전체 바이트를 단순 합하여 계산한 32비트 체크섬을 16진수 대문자 영문자로 변환합니다. (예: `07704B0D`)
 
-예시) 수정 전 원본 [firmware_backup_1.bin](file:///Users/kwon/Workspace/Python/2026/dororong/diagnostics/mac_analysis/firmware_backup_1.bin) 의 바이트 합(=0x07704B0D)을 그대로 업그레이드하려면 파일명을 아래와 같이 설정하고 부팅하면 업데이트가 진행됩니다!:
+예시) 수정 전 원본 [firmware_backup_1.bin](diagnostics/mac_analysis/firmware_backup_1.bin) 의 바이트 합(=0x07704B0D)을 그대로 업그레이드하려면 파일명을 아래와 같이 설정하고 부팅하면 업데이트가 진행됩니다!:
 👉 **`JH_5307_202500429120107704B0D.bin`**
 
 ## 업데이트 툴 작성
-이 과정을 쉽게 자동화하기 위해 [sd_upgrade_tool.py](file:///Users/kwon/Workspace/Python/2026/dororong/sd_upgrade_tool.py) 스크립트를 작성해 두었습니다. 수정이 완료된 펌웨어를 이 파이썬 스크립트에 전달하면 올바른 파일명을 제안해줍니다.
+이 과정을 쉽게 자동화하기 위해 [sd_upgrade_tool.py](sd_upgrade_tool.py) 스크립트를 작성해 두었습니다. 수정이 완료된 펌웨어를 이 파이썬 스크립트에 전달하면 올바른 파일명을 제안해줍니다.
 
 사용법: `python3 sd_upgrade_tool.py <펌웨어.bin>` 
 명령어를 실행하면, 어떤 파일명으로 변경하여 SD카드 최상단에 넣어야 하는지 즉시 출력됩니다.

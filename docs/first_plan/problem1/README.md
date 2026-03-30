@@ -108,7 +108,7 @@ R0에 로드되는 모드 값을 찾아서 2→3으로 변경.
 ## 도구
 
 - `scripts/settings_patch.py --raw-patch` — 펌웨어 코드 바이트 패치 (구현 완료)
-- `E:\Kwon\Utility\flashrom-1.4\flashrom.exe` — CH341A SPI 프로그래머
+- `flashrom.exe` — CH341A SPI 프로그래머
 - Ghidra 프로젝트: `analysis/ghidra_project/GP1235_FW.gpr`
 
 ## 관련 파일
