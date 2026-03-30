@@ -25,6 +25,8 @@ diagnostics/mac_analysis/*.hex
 *.png
 *.jpeg
 *.bmp
+!image/
+!image/*
 
 # Audio/Video
 *.wav
