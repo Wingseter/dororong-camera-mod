@@ -26,5 +26,15 @@ diagnostics/mac_analysis/*.hex
 *.jpeg
 *.bmp
 
+# Audio/Video
+*.wav
+*.mp3
+*.mp4
+
 # KakaoTalk photos
 KakaoTalk_Photo_*.jpeg
+
+# Publish (배포용 빌드)
+publish/
+
+.claude/
