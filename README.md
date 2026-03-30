@@ -1,6 +1,6 @@
-# DORORONG - GP1235 Camera Firmware Mod
+# DORORONG Camera Firmware Mod
 
-Custom firmware project for the DC23 mini camera based on the **Generalplus GP1235** SoC.
+Custom firmware project for the DORORONG Camera (DC23 mini camera) based on the **Generalplus GP1235** SoC.
 
 Reverse-engineered from scratch — no SDK, no datasheet, no source code.
 
